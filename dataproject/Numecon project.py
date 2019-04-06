@@ -71,13 +71,13 @@ for i in range(2010, 2018):
 MyDict2
 
 #Renmaing years
-df2.rename(columns = MyDict1, inplace = True)
+df2.rename(columns = MyDict2, inplace = True)
 
 #Resetting index
 df2 = df2.reset_index()
 
 # Changing dataframe from wide to long
-df2 = pd.wide_to_long(gdp, stubnames='e', i='Country Code', j='Year')
+df2 = pd.wide_to_long(df2, stubnames='e', i='Countries', j='Year')
 
 #renaming columns
 df2 = df2.reset_index()
