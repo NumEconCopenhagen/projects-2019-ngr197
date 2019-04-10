@@ -22,11 +22,11 @@ df1 = df1.set_index("Countries")
 #Remaning the years, due to errors accouring with function variable names as numbers
 myDict = {}
 for i in range(2010,2018) #Range from the years 2010 to 2017
-    myDict[stri(i)] = f"e{i}"
+    myDict[str(i)] = f"e{i}"
 myDict
 
 #Renaming years in dataframe
-df1.rename(colmuns = {myDict}, inplace=true)
+df1.rename(colmuns = myDict, inplace=true)
 
 #Resetting index
 df1 = df1.reset_index()
@@ -44,8 +44,6 @@ NATO_EU = df1.head(1)
 
 df_USA = df1.tail(2)
 USA = df_USA.head(1)
-
-year = [2010,2011,2012,2013,2014,2015,2016,2017]
 
 #Showing plot of defence expenditures in plot over the period of time.
 plt.plot(year, NATO_EU, "NATO_EU" )
